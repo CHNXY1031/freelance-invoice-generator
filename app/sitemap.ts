@@ -1,18 +1,18 @@
 import type { MetadataRoute } from "next";
 import { professions } from "@/lib/professions";
 
-const siteUrl = "https://freelance-invoice-generator.vercel.app";
+const BASE_URL = "https://freelance-invoice-generator-alpha.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: siteUrl,
+      url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     ...professions.map((profession) => ({
-      url: `${siteUrl}/invoice-generator-for-${profession.slug}`,
+      url: `${BASE_URL}/invoice-generator-for-${profession.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,

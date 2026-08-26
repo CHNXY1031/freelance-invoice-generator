@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://freelance-invoice-generator.vercel.app";
+const BASE_URL = "https://freelance-invoice-generator-alpha.vercel.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: `${siteUrl}/sitemap.xml`,
-    host: siteUrl,
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }

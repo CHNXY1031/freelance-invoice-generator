@@ -30,4 +30,4 @@ npm run lint
 npm run build
 ```
 
-Production domain: [https://freelance-invoice-generator.vercel.app](https://freelance-invoice-generator.vercel.app)
+Production domain: [https://freelance-invoice-generator-alpha.vercel.app](https://freelance-invoice-generator-alpha.vercel.app)

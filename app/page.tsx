@@ -3,13 +3,13 @@ import { ArrowRight, BadgeCheck, FileCheck2, LockKeyhole, Sparkles } from "lucid
 import InvoiceEditor from "@/components/InvoiceEditor";
 import { professions } from "@/lib/professions";
 
-const siteUrl = "https://freelance-invoice-generator.vercel.app";
+const BASE_URL = "https://freelance-invoice-generator-alpha.vercel.app";
 
 const webApplicationSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "InvoiceCraft Freelance Invoice & Contract Generator",
-  url: siteUrl,
+  url: BASE_URL,
   applicationCategory: "BusinessApplication",
   operatingSystem: "Any",
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import InvoiceEditor from "@/components/InvoiceEditor";
 import { getProfession, professions } from "@/lib/professions";
 
-const siteUrl = "https://freelance-invoice-generator.vercel.app";
+const BASE_URL = "https://freelance-invoice-generator-alpha.vercel.app";
 
 export const dynamicParams = false;
 
@@ -23,7 +23,7 @@ export function generateMetadata({ params }: { params: { profession: string } })
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { title, description, url: `${siteUrl}${path}`, images: [] },
+    openGraph: { title, description, url: `${BASE_URL}${path}`, images: [] },
     twitter: { card: "summary", title, description, images: [] },
   };
 }
@@ -65,7 +65,7 @@ export default function ProfessionInvoicePage({ params }: { params: { profession
     "@context": "https://schema.org",
     "@type": "WebApplication",
     name: `${profession.name} Invoice Generator`,
-    url: `${siteUrl}/invoice-generator-for-${profession.slug}`,
+    url: `${BASE_URL}/invoice-generator-for-${profession.slug}`,
     description: `Free online invoice and contract generator for ${profession.name.toLowerCase()} professionals.`,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Any",

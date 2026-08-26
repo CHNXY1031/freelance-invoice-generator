@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = "https://freelance-invoice-generator.vercel.app";
+const BASE_URL = "https://freelance-invoice-generator-alpha.vercel.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Free Invoice & Contract Generator for Freelancers",
     template: "%s | InvoiceCraft",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   verification: { google: "google4bf79fc737f0ba77" },
   openGraph: {
     type: "website",
-    url: siteUrl,
+    url: BASE_URL,
     siteName: "InvoiceCraft",
     title: "Free Invoice & Contract Generator for Freelancers",
     description: "Create a polished invoice or service contract and export it as a professional PDF — no account required.",
