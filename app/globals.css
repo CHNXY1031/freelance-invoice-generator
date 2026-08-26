@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f6f3eb;
+  color: #17211d;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(22, 76, 59, 0.2);
+}
+
+@layer components {
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-evergreen px-4 py-2.5 text-sm font-bold text-white shadow-sm transition hover:bg-[#0f3d2f] focus:outline-none focus:ring-4 focus:ring-evergreen/20;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-stone-200 bg-white px-4 py-2.5 text-sm font-bold text-ink transition hover:border-stone-300 hover:bg-stone-50 focus:outline-none focus:ring-4 focus:ring-stone-200;
+  }
+
+  .editor-panel {
+    @apply rounded-2xl border border-stone-200 bg-white p-5 shadow-soft sm:p-6;
+  }
+
+  .panel-heading {
+    @apply mb-6 flex items-start gap-3;
+  }
+
+  .panel-heading > span {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-evergreen text-[10px] font-bold text-white;
+  }
+
+  .panel-heading h2 {
+    @apply text-base font-bold text-ink;
+  }
+
+  .panel-heading p {
+    @apply mt-0.5 text-sm text-stone-500;
+  }
+
+  .document-label {
+    @apply text-[10px] font-bold uppercase tracking-[0.18em] text-evergreen;
+  }
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.invoice-document {
+  min-height: 860px;
+}
+
+@media (max-width: 639px) {
+  .invoice-document .document-body {
+    padding: 1.5rem;
+  }
+
+  .invoice-document {
+    min-width: 680px;
+    transform-origin: top left;
+  }
+
+  .editor-grid > :last-child {
+    overflow-x: auto;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .invoice-document,
+  .invoice-document * {
+    visibility: visible !important;
+  }
+
+  .invoice-document {
+    position: absolute !important;
+    inset: 0 auto auto 0 !important;
+    width: 186mm !important;
+    min-height: 273mm !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .invoice-document .document-body {
+    padding: 11mm 12mm !important;
+  }
+
+  .invoice-document tr,
+  .invoice-document section,
+  .invoice-document footer {
+    break-inside: avoid;
+  }
+
+  .print-hide {
+    display: none !important;
+  }
+}
